@@ -27,12 +27,19 @@ cd /opt/kafka/kafka_2.11-0.10.1.0
 source /root/.bash_profile
 
 bin/kafka-topics.sh --create --topic orders --zookeeper zookeeper0:2181 --partitions 3 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic users --zookeeper zookeeper0:2181 --partitions 3 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic items --zookeeper zookeeper0:2181 --partitions 6 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic orderuser-repartition-by-item --zookeeper zookeeper0:2181 --partitions 6 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic reportitem-repartition-by-item --zookeeper zookeeper0:2181 --partitions 6 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic reportItem-repartition-by-category --zookeeper zookeeper0:2181 --partitions 6 --replication-factor 1
+
 bin/kafka-topics.sh --create --topic output --zookeeper zookeeper0:2181 --partitions 3 --replication-factor 1
 
 bin/kafka-topics.sh --describe --zookeeper zookeeper0:2181
+
 bin/kafka-console-consumer.sh --bootstrap-server kafka0:9092 --topic output --from-beginning
